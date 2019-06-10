@@ -23,7 +23,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TodoList addItem={this.addItem} />
+        <TodoList 
+                  addItem={this.addItem}
+                  inputElement={this.inputElement}
+                  handleInput={this.handleInput}
+                  currentItem={this.state.currentItem}
+                />
       </div>
     )
   }
