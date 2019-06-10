@@ -22,6 +22,15 @@ class App extends Component {
 
   addItem = e => {
     e.preventDefault()
+    const newItem = this.state.currentItem
+    if (newItem.text !== '') {
+      console.log(newItem)
+      const items = [...this.state.items, newItem]
+      this.setState({
+        items: items,
+        currentItem: {text: '', key: ''},
+      })
+    }
     console.log('Hello Add Item')
   }
 
