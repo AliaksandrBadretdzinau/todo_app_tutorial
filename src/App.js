@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import TodoList from './TodoList'
+import TodoItems from './TodoItems'
 
 class App extends Component {
   constructor() {
@@ -34,9 +35,12 @@ class App extends Component {
     console.log('Hello Add Item')
   }
 
+  inputElement = React.createRef()
+
   render() {
     return (
       <div className="App">
+        <TodoItems entries={this.state.items} />
         <TodoList 
                   addItem={this.addItem}
                   inputElement={this.inputElement}
