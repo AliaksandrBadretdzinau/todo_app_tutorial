@@ -35,12 +35,21 @@ class App extends Component {
     console.log('Hello Add Item')
   }
 
+  deleteItem = key => {
+    const filteredItems = this.state.items.filter(item => {
+      return item.key !== key
+    })
+    this.setState({
+      items: filteredItems,
+    })
+  }
+
   inputElement = React.createRef()
 
   render() {
     return (
       <div className="App">
-        <TodoItems entries={this.state.items} />
+        <TodoItems entries={this.state.items}deleteItem={this.deleteItem}/>
         <TodoList 
                   addItem={this.addItem}
                   inputElement={this.inputElement}
