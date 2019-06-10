@@ -15,7 +15,8 @@ class App extends Component {
     console.log('Hello Input')
   }
 
-  addItem = () => {
+  addItem = e => {
+    e.preventDefault()
     console.log('Hello Add Item')
   }
 
